@@ -8,9 +8,8 @@ import barRoutes from './routes/barRoutes';
 const app = express();
 const PORT = Number(process.env.PORT) || 4000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/statbar';
-const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
 
-app.use(cors({ origin: CORS_ORIGIN }));
+app.use(cors());
 app.use(express.json());
 
 app.get('/health', (_req: Request, res: Response) => {
